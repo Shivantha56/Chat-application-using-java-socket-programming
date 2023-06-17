@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="675.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.chatApp.controller.ChatDashBoardFormController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutY="304.0" pannable="true" prefHeight="371.0" prefWidth="270.0" style="-fx-background-color: #111B21;" vbarPolicy="NEVER">
+         <content>
+            <VBox fx:id="vBox" prefHeight="554.0" prefWidth="270.0" style="-fx-background-color: #111B21;" />
+         </content>
+      </ScrollPane>
+      <ScrollPane fx:id="chattingPane" hbarPolicy="NEVER" layoutX="270.0" pannable="true" prefHeight="675.0" prefWidth="730.0" style="-fx-background-color: #29363E;" vbarPolicy="NEVER">
+         <content>
+            <HBox prefHeight="681.0" prefWidth="728.0" style="-fx-background-color: #29363E;">
+               <children>
+                  <VBox fx:id="inputMsgVBox" prefHeight="681.0" prefWidth="361.0" />
+                  <VBox fx:id="outputMsgVBox" prefHeight="681.0" prefWidth="361.0" />
+               </children></HBox>
+         </content>
+      </ScrollPane>
+      <HBox prefHeight="60.0" prefWidth="270.0" style="-fx-background-color: #29363E;">
+         <children>
+            <ImageView fitHeight="65.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/UIImage/admin%20image.png" />
+               </image>
+            </ImageView>
+            <Label text="Admin" textFill="#ecf9ff">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <padding>
+                  <Insets top="22.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets top="3.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fitHeight="50.0" fitWidth="26.0" onMouseClicked="#addNewClientOnAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/UIImage/groupicon.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="105.0" top="19.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="69.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/UIImage/Rectangle%2012.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+      <HBox layoutY="68.0" prefHeight="39.0" prefWidth="270.0" style="-fx-background-color: #111B21;">
+         <children>
+            <HBox prefHeight="35.0" prefWidth="247.0" style="-fx-background-radius: 10px;" styleClass="searchBar" stylesheets="@../assets/css/style.css">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="12.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="6.0" />
+               </padding>
+               <children>
+                  <TextField focusTraversable="false" opacity="0.71" prefHeight="23.0" prefWidth="210.0" promptText="Search clients" style="-fx-background-color: #29363E;">
+                     <HBox.margin>
+                        <Insets left="7.0" top="-4.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="18.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/UIImage/icons8-search-50%20(1).png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="-1.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="addNewClientsPane" prefHeight="675.0" prefWidth="1000.0" visible="false">
+         <children>
+            <AnchorPane layoutX="289.0" layoutY="177.0" prefHeight="232.0" prefWidth="413.0" style="-fx-background-color: #111B21; -fx-background-radius: 20px;">
+               <children>
+                  <Label layoutX="135.0" layoutY="42.0" prefHeight="24.0" prefWidth="196.0" text="Add new clients to your" textFill="WHITE" />
+                  <Label alignment="CENTER" layoutX="171.0" layoutY="66.0" prefHeight="24.0" prefWidth="72.0" text="chat room" textFill="WHITE" />
+                  <VBox layoutX="67.0" layoutY="98.0" prefHeight="105.0" prefWidth="291.0">
+                     <children>
+                        <VBox prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #29363E; -fx-background-radius: 20px;">
+                           <VBox.margin>
+                              <Insets top="11.0" />
+                           </VBox.margin>
+                           <children>
+                              <TextField fx:id="txtInputMemberName" focusTraversable="false" opacity="0.65" prefHeight="5.0" prefWidth="263.0" promptText="Enter client name here" style="-fx-background-color: #29363E;">
+                                 <VBox.margin>
+                                    <Insets bottom="-10.0" left="18.0" right="17.0" top="7.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <Button fx:id="enterMemberBtnOnAction" mnemonicParsing="false" onAction="#enterMemberBtnOnAction" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: #0bf176;" text="Enter">
+                           <VBox.margin>
+                              <Insets left="94.0" top="16.0" />
+                           </VBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="380.0" layoutY="6.0" onMousePressed="#closeBtnOnAction">
+                     <image>
+                        <Image url="@../assets/UIImage/close.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <HBox layoutY="111.0" onMouseReleased="#adminHboxMouseOnAction" prefHeight="54.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css">
+         <children>
+            <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/UIImage/admin%20image.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="8.0" top="-4.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox prefHeight="47.0" prefWidth="190.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="177.0" text="Admin" textFill="#ecf9ff">
+                     <VBox.margin>
+                        <Insets left="15.0" top="4.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="15.0" prefWidth="157.0" text="Hi my name is Dilshan" textFill="#ecf9ff">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ImageView fitHeight="6.0" fitWidth="188.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/UIImage/Rectangle%2013.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="1.0" />
+               </padding>
+            </VBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+      <HBox layoutY="179.0" onMousePressed="#managerHboxMouseOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css">
+         <children>
+            <ImageView fitHeight="48.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/UIImage/345636.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="23.0" right="12.0" top="7.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox prefHeight="72.0" prefWidth="197.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="177.0" text="Manager" textFill="#ecf9ff">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" top="4.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="15.0" prefWidth="157.0" text="Hi i am a manager" textFill="#ecf9ff">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="15.0" top="8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ImageView fitHeight="6.0" fitWidth="188.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/UIImage/Rectangle%2013.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="11.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets top="1.0" />
+               </padding>
+            </VBox>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBox>
+      <VBox layoutY="243.0" prefHeight="65.0" prefWidth="270.0" style="-fx-background-color: #111B21;">
+         <children>
+            <Label text="MEMBER AREA" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="90.0" top="26.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <HBox layoutY="107.0" prefHeight="8.0" prefWidth="270.0" style="-fx-background-color: #111B21;" />
+   </children>
+</AnchorPane>

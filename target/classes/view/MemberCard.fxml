@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox prefHeight="65.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.chatApp.controller.MemberCardController">
+   <children>
+      <ImageView fitHeight="56.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/UIImage/image_processing20210616-28548-lggojf.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="17.0" right="12.0" top="11.0" />
+         </HBox.margin>
+      </ImageView>
+      <VBox fx:id="vboxCard" prefHeight="72.0" prefWidth="197.0">
+         <children>
+            <Label fx:id="memberNameLbl" prefHeight="15.0" prefWidth="177.0" text="Manager" textFill="#ecf9ff">
+               <font>
+                  <Font size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="4.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </Label>
+            <Label fx:id="lblaaaaaaaaa" prefHeight="15.0" prefWidth="157.0" text="Hi i am a manager" textFill="#ecf9ff">
+               <font>
+                  <Font size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="15.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <ImageView fitHeight="6.0" fitWidth="188.0" opacity="0.6" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/UIImage/Rectangle%2013.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="11.0" />
+               </VBox.margin>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets top="1.0" />
+         </padding>
+      </VBox>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</HBox>

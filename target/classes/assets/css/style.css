@@ -1,0 +1,19 @@
+.admin-img{
+    border-radius: 70px;
+}
+
+.searchBar{
+    -fx-background-color:   #29363E;
+    fx-background-radius:5px;
+}
+
+.hBoxHover:hover{
+    -fx-background-color:    #29363E;
+}
+
+.hBoxHover{
+
+    -fx-background-color: #111B21;
+
+
+}
