@@ -1,6 +1,5 @@
 package org.chatApp.controller;
 
-//import org.chatApp.controller.*;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -78,25 +77,14 @@ public class ChatDashBoardFormController extends Thread implements Initializable
                 bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-
                 b = false;
-
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
             this.start();
-
-
         }
-//        else {
-//
-//
-//        }
-
-
-//        System.out.println(b);
     }
 
     public void managerHboxMouseOnAction(MouseEvent mouseEvent) throws IOException {
@@ -106,8 +94,6 @@ public class ChatDashBoardFormController extends Thread implements Initializable
         adminSendBtn.setVisible(false);
 
 
-//        System.out.println(b);
-//        System.out.println("Admin clicked");
         if (b) {
 
             try {
@@ -115,30 +101,11 @@ public class ChatDashBoardFormController extends Thread implements Initializable
                 bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
-//                while (true){
-//
-//                    System.out.println(bufferedReader.readLine());
-//                    bufferedWriter.write("hi");
-//                    bufferedWriter.newLine();
-//                    bufferedWriter.flush();
-//                    bufferedWriter.close();
-//                }
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-
-
         }
-
-//        this.start();
-//        else {
-//
-//
-//        }
-
-//        System.out.println(b);
-
     }
 
     public void enterMemberBtnOnAction(ActionEvent actionEvent) throws IOException {
@@ -153,13 +120,12 @@ public class ChatDashBoardFormController extends Thread implements Initializable
         controller.memberNameLbl.setText(txtInputMemberName.getText());
         controller.lblaaaaaaaaa.setText("No new MSG");
         if (controller.memberNameLbl.getText().equals("")) {
-            new Alert(Alert.AlertType.ERROR, "please check th name").show();
+            new Alert(Alert.AlertType.ERROR, "please check the name").show();
         } else {
 
-//            hBox.setId(txtInputMemberName.getText());
-//            //controller.memberCardHBox.setId(txtInputMemberName.getText());
-//            vBox.getChildren().add(hBox);
-
+            hBox.setId(txtInputMemberName.getText());
+            controller.memberCardHBox.setId(txtInputMemberName.getText());
+            vBox.getChildren().add(hBox);
 
         }
 
