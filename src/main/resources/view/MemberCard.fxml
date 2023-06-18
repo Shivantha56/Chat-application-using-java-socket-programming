@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox prefHeight="65.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.chatApp.controller.MemberCardController">
+<HBox fx:id="memberCardHBox" prefHeight="65.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.chatApp.controller.MemberCardController">
    <children>
       <ImageView fitHeight="56.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
          <image>

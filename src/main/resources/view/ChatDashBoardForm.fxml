@@ -11,18 +11,28 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="675.0" prefWidth="976.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.chatApp.controller.ChatDashBoardFormController">
+<AnchorPane prefHeight="675.0" prefWidth="976.0" style="-fx-background-color: #29363E;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.chatApp.controller.ChatDashBoardFormController">
    <children>
       <ScrollPane hbarPolicy="NEVER" layoutY="304.0" pannable="true" prefHeight="371.0" prefWidth="270.0" style="-fx-background-color: #111B21;" vbarPolicy="NEVER">
          <content>
             <VBox fx:id="vBox" prefHeight="554.0" prefWidth="270.0" style="-fx-background-color: #111B21;" />
          </content>
       </ScrollPane>
-      <ScrollPane fx:id="chattingPane" hbarPolicy="NEVER" layoutX="270.0" pannable="true" prefHeight="675.0" prefWidth="730.0" style="-fx-background-color: #29363E;" vbarPolicy="NEVER">
+      <ScrollPane fx:id="chattingPane" hbarPolicy="NEVER" layoutX="270.0" layoutY="70.0" pannable="true" prefHeight="554.0" prefWidth="730.0" style="-fx-background-color: #111B21;" vbarPolicy="NEVER">
          <content>
-            <HBox prefHeight="681.0" prefWidth="728.0" style="-fx-background-color: #29363E;">
+            <HBox prefHeight="555.0" prefWidth="728.0" style="-fx-background-color: #111B21;">
                <children>
-                  <VBox fx:id="inputMsgVBox" prefHeight="681.0" prefWidth="361.0" />
+                  <VBox fx:id="inputMsgVBox" prefHeight="555.0" prefWidth="355.0">
+                     <children>
+                        <HBox fx:id="hboxsetMsg" prefHeight="60.0" prefWidth="355.0">
+                           <VBox.margin>
+                              <Insets top="61.0" />
+                           </VBox.margin>
+                           <children>
+                              <Label fx:id="lblReceivedMsg" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children></VBox>
                   <VBox fx:id="outputMsgVBox" prefHeight="681.0" prefWidth="361.0" />
                </children></HBox>
          </content>
@@ -140,7 +150,7 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <HBox layoutY="111.0" onMouseReleased="#adminHboxMouseOnAction" prefHeight="54.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css">
+      <HBox fx:id="adminHBox" layoutY="111.0" onMouseReleased="#adminHboxMouseOnAction" prefHeight="54.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css">
          <children>
             <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -186,7 +196,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </HBox>
-      <HBox layoutY="179.0" onMousePressed="#managerHboxMouseOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css">
+      <HBox fx:id="managerHBox" layoutY="179.0" onMousePressed="#managerHboxMouseOnAction" prefHeight="65.0" prefWidth="270.0" styleClass="hBoxHover" stylesheets="@../assets/css/style.css">
          <children>
             <ImageView fitHeight="48.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -245,5 +255,9 @@
          </children>
       </VBox>
       <HBox layoutY="107.0" prefHeight="8.0" prefWidth="270.0" style="-fx-background-color: #111B21;" />
+      <TextField fx:id="adminMessageTxt" layoutX="420.0" layoutY="636.0" prefHeight="25.0" prefWidth="210.0" />
+      <Button fx:id="adminSendBtn" layoutX="668.0" layoutY="636.0" mnemonicParsing="false" onAction="#adminSendBtnOnAction" prefHeight="25.0" prefWidth="72.0" text="Button" />
+      <TextField fx:id="managerMessageTxt" layoutX="420.0" layoutY="636.0" prefHeight="25.0" prefWidth="210.0" />
+      <Button fx:id="managerSendBtn" layoutX="669.0" layoutY="636.0" mnemonicParsing="false" onAction="#managetSendBtnOnAction" prefHeight="25.0" prefWidth="72.0" text="Button" />
    </children>
 </AnchorPane>

@@ -2,3 +2,5 @@
 /home/dilshan/ChatApp/ChatApp/src/main/java/org/chatApp/controller/MemberCardController.java
 /home/dilshan/ChatApp/ChatApp/src/main/java/org/chatApp/controller/ChatDashBoardFormController.java
 /home/dilshan/ChatApp/ChatApp/src/main/java/org/chatApp/controller/PreLoaderController.java
+/home/dilshan/ChatApp/ChatApp/src/main/java/org/chatApp/utill/ClientHandler.java
+/home/dilshan/ChatApp/ChatApp/src/main/java/org/chatApp/Server.java
